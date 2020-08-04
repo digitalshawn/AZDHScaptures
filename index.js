@@ -22,7 +22,7 @@ async function run() {
   
   await page.goto('https://www.azdhs.gov/preparedness/epidemiology-disease-control/infectious-disease-epidemiology/covid-19/dashboards/index.php', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
-  await page.screenshot({ path: `${dir}/az-${fts}_azdhs.png` , fullPage: true});
+  await page.screenshot({ path: `${dir}/az-${fts}_azdhs_summary.png` , fullPage: true});
 
   await page.click('a[class=demodashboard]', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
@@ -32,9 +32,9 @@ async function run() {
   await page.waitFor(4000);
   await page.screenshot({ path: `${dir}/az-${fts}_azdhs_death.png` , fullPage: true});
 
-  // await page.click('a[class=zipdashboard]', { waitUntil: 'networkidle0' });
-  // await page.waitFor(4000);
-  // await page.screenshot({ path: `${dir}/az-${fts}_azdhs_zip.png` , fullPage: true});
+  await page.click('a[class=zipdashboard]', { waitUntil: 'networkidle0' });
+  await page.waitFor(8000);
+  await page.screenshot({ path: `${dir}/az-${fts}_azdhs_zip.png` , fullPage: true});
 
   await page.click('a[class=confirmed-cases-by-day]', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
@@ -66,10 +66,10 @@ async function run() {
 
   await page.goto('https://tableau.azdhs.gov/views/EMResourceBeds/InpatientBedUsageAvailability?%3Aembed=y&%3AshowVizHome=no&%3Ahost_url=https%3A%2F%2Ftableau.azdhs.gov%2F&%3Aembed_code_version=3&%3Atabs=yes&%3Atoolbar=no&%3AshowAppBanner=false&%3Adisplay_spinner=no&iframeSizedToWindow=true&%3AloadOrderID=6', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
-  await page.screenshot({ path: `${dir}/az-${fts}_azdhs.png` , fullPage: true});
+  await page.screenshot({ path: `${dir}/az-${fts}_InpatientBedUsageAvailability_azdhs.png` , fullPage: true});
   await page.goto('https://tableau.azdhs.gov/views/EMResourceBeds/EDBedUsageAvailability?%3Aembed=y&%3AshowVizHome=no&%3Ahost_url=https%3A%2F%2Ftableau.azdhs.gov%2F&%3Aembed_code_version=3&%3Atabs=yes&%3Atoolbar=no&%3AshowAppBanner=false&%3Adisplay_spinner=no&iframeSizedToWindow=true&%3AloadOrderID=6', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
-  await page.screenshot({ path: `${dir}/az-${fts}_InpatientBedUsageAvailability_azdhs.png` , fullPage: true});
+  await page.screenshot({ path: `${dir}/az-${fts}_EDBedUsageAvailability_azdhs.png` , fullPage: true});
   await page.goto('https://tableau.azdhs.gov/views/EMResourceBeds/ICUBedUsageAvailability?%3Aembed=y&%3AshowVizHome=no&%3Ahost_url=https%3A%2F%2Ftableau.azdhs.gov%2F&%3Aembed_code_version=3&%3Atabs=yes&%3Atoolbar=no&%3AshowAppBanner=false&%3Adisplay_spinner=no&iframeSizedToWindow=true&%3AloadOrderID=6', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
   await page.screenshot({ path: `${dir}/az-${fts}_ICUBedUsageAvailability_azdhs.png` , fullPage: true});
@@ -105,7 +105,7 @@ async function run() {
   await page.screenshot({ path: `${dir}/az-${fts}_CLIDashboard_azdhs.png` , fullPage: true});
   await page.goto('https://tableau.azdhs.gov/views/CLIILISyndromicSurveillance/ILIDashboard?%3Aembed=y&%3AshowVizHome=no&%3Ahost_url=https%3A%2F%2Ftableau.azdhs.gov%2F&%3Aembed_code_version=3&%3Atabs=yes&%3Atoolbar=no&%3AshowAppBanner=false&%3Adisplay_spinner=no&iframeSizedToWindow=true&%3AloadOrderID=4', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
-  await page.screenshot({ path: `${dir}/az-${fts}_azdhs.png` , fullPage: true});
+  await page.screenshot({ path: `${dir}/az-${fts}_ILIDashboard_azdhs.png` , fullPage: true});
   await page.goto('https://tableau.azdhs.gov/views/Hospitalization/HospitalizedCOVID-19Cases?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Ftableau.azdhs.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=no&:showAppBanner=false&:display_spinner=no&iframeSizedToWindow=true&:loadOrderID=5', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
   await page.screenshot({ path: `${dir}/az-${fts}_HospitalizedCOVID-19Cases_azdhs.png` , fullPage: true});
@@ -114,7 +114,7 @@ async function run() {
   await page.screenshot({ path: `${dir}/az-${fts}_EpiCurveDashboard_azdhs.png` , fullPage: true});
   await page.goto('https://tableau.azdhs.gov/views/COVID-19Deaths/Deaths?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Ftableau.azdhs.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=no&:showAppBanner=false&:display_spinner=no&iframeSizedToWindow=true&:loadOrderID=8', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
-  await page.screenshot({ path: `${dir}/az-${fts}_azdhs.png` , fullPage: true});
+  await page.screenshot({ path: `${dir}/az-${fts}_Deaths_azdhs.png` , fullPage: true});
   await page.goto('https://tableau.azdhs.gov/views/COVID19Demographics/EpiData?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Ftableau.azdhs.gov%2F&:embed_code_version=3&:tabs=no&:toolbar=no&:showAppBanner=false&:display_spinner=no&iframeSizedToWindow=true&:loadOrderID=9', { waitUntil: 'networkidle0' });
   await page.waitFor(4000);
   await page.screenshot({ path: `${dir}/az-${fts}_EpiData_azdhs.png` , fullPage: true});
